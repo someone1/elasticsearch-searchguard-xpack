@@ -1,4 +1,4 @@
 FROM khezen/elasticsearch:6
 
-RUN /elasticsearch/bin/elasticsearch-plugin install -b ingest-user-agent && \
-    /elasticsearch/bin/elasticsearch-plugin install -b ingest-geoip   
+RUN ES_CONF_DIR=/elasticsearch/config /elasticsearch/bin/elasticsearch-plugin install -b ingest-user-agent && \
+    ES_CONF_DIR=/elasticsearch/config /elasticsearch/bin/elasticsearch-plugin install -b ingest-geoip
